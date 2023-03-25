@@ -1,13 +1,123 @@
 body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+}
+
+section {
+  text-align: center;
+  width: 100%;
+}
+
+.todo-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.todo-section .form-control {
+  margin-bottom: 2rem;
+}
+
+.todo-heading {
+  font-size: 3rem;
+  user-select: none;
+}
+
+.todo-input {
+  position: relative;
+}
+
+.plus-icon {
+  position: absolute;
+  font-size: 2.5rem;
+  right: 0;
+  top: 0.75rem;
+  cursor: pointer;
+}
+
+#todo-input {
+  width: 100%;
+  height: 3.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.todo-list {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-icon {
+  cursor: pointer;
+  transition: opacity 0.25s ease-in-out;
+  font-size: 1.5rem;
+}
+
+.icon {
+  margin: 0 10px 0 0;
+  font-size: 1.5rem;
+}
+
+.todo-done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.time-stamp {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .todo-section {
+    max-width: 600px;
+    padding: 0 20px
+  }
+
+  .todo-list {
+    flex-direction: column;
+  }
+
+  .task-icon {
+    align-self: start;
+  }
+
+  .time-stamp {
+    align-self: end;
+  }
+
+  #todo-input {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  #todo-input {
+    font-size: 1rem;
+  }
+
+  .plus-icon {
+    display: none;
+  }
 }
